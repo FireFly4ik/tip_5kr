@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Таблица дел на неделю</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📅 Таблица дел на неделю</h1>
+      <p class="subtitle">Планируй свою неделю эффективно</p>
+    </header>
+
+    <!-- Статистика -->
+    <div class="statistics-panel">
+      <div class="stat-card">
+        <div class="stat-value" id="totalTasks">0</div>
+        <div class="stat-label">Всего задач</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="completedTasks">0</div>
+        <div class="stat-label">Выполнено</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="pendingTasks">0</div>
+        <div class="stat-label">Осталось</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="completionRate">0%</div>
+        <div class="stat-label">Прогресс</div>
+      </div>
+    </div>
+
+    <!-- Форма добавления задачи -->
+    <div class="add-task-section">
+      <h2>➕ Добавить новую задачу</h2>
+      <form id="addTaskForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="taskDay">День недели:</label>
+            <select id="taskDay" required>
+              <option value="">Выберите день</option>
+              <option value="Понедельник">Понедельник</option>
+              <option value="Вторник">Вторник</option>
+              <option value="Среда">Среда</option>
+              <option value="Четверг">Четверг</option>
+              <option value="Пятница">Пятница</option>
+              <option value="Суббота">Суббота</option>
+              <option value="Воскресенье">Воскресенье</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="taskTitle">Название задачи:</label>
+            <input type="text" id="taskTitle" placeholder="Введите название задачи" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="taskTime">Время:</label>
+            <input type="time" id="taskTime" value="09:00">
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Добавить задачу</button>
+      </form>
+    </div>
+
+    <!-- Фильтр по дням -->
+    <div class="filter-section">
+      <label for="filterDay">Фильтр по дню:</label>
+      <select id="filterDay">
+        <option value="">Все дни</option>
+        <option value="Понедельник">Понедельник</option>
+        <option value="Вторник">Вторник</option>
+        <option value="Среда">Среда</option>
+        <option value="Четверг">Четверг</option>
+        <option value="Пятница">Пятница</option>
+        <option value="Суббота">Суббота</option>
+        <option value="Воскресенье">Воскресенье</option>
+      </select>
+    </div>
+
+    <!-- Таблица задач -->
+    <div class="tasks-section">
+      <h2>📋 Список задач</h2>
+      <div id="tasksContainer">
+        <!-- Здесь будут отображаться задачи -->
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
